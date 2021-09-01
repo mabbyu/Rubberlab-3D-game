@@ -256,3 +256,60 @@ Received Import Request.
 Start importing Assets/Environment using Guid(074e16f15da0d8e4d80514cbe92bbaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e35ed04481f5b6c8cfea80349c4fde') in 0.010769 seconds 
   Import took 0.014287 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1472.922582 seconds.
+  path: Assets/Environment/Buku.fbx
+  artifactKey: Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku.fbx using Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2104c6fc1ba353b10eea9244a7fee829') in 0.100230 seconds 
+  Import took 0.104183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 116.871291 seconds.
+  path: Assets/Environment/Buku.fbx
+  artifactKey: Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku.fbx using Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde9a73b2585f8b4d066faa25bf4e511') in 0.045405 seconds 
+  Import took 0.049115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003191 seconds.
+  path: Assets/Environment/Buku.fbx
+  artifactKey: Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku.fbx using Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde9a73b2585f8b4d066faa25bf4e511') in 0.066636 seconds 
+  Import took 0.070437 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.741804 seconds.
+  path: Assets/Environment/Buku
+  artifactKey: Guid(f0ef8aeeeab3d204ba3e6e28d20d143e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku using Guid(f0ef8aeeeab3d204ba3e6e28d20d143e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f3b803dbae33760940d255a5d2de89f') in 0.007738 seconds 
+  Import took 0.012251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.065799 seconds.
+  path: Assets/Environment/Buku/Material.001.mat
+  artifactKey: Guid(534533ddf2aa5ce4e8b184f2653870d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku/Material.001.mat using Guid(534533ddf2aa5ce4e8b184f2653870d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7baf5a087ef66c1d1f1f52f592d95c7a') in 0.017998 seconds 
+  Import took 0.021008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Environment/Buku/Material.002.mat
+  artifactKey: Guid(cf42ca1089d7e3a45a1c22ded3fd9894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku/Material.002.mat using Guid(cf42ca1089d7e3a45a1c22ded3fd9894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66fd0ba317c42f54e447b317442209b6') in 0.024944 seconds 
+  Import took 0.028075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 135.564518 seconds.
+  path: Assets/Environment/Buku.fbx
+  artifactKey: Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environment/Buku.fbx using Guid(980db49aeb8144545a12728d1eb4a28d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b29b5f73eda928861f78efb959d164') in 0.037193 seconds 
+  Import took 0.043024 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

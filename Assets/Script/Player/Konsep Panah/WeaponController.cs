@@ -25,6 +25,9 @@ public class WeaponController : MonoBehaviour
     private float firePower;
     private bool fire;
 
+    public int karet;
+    public Text karetText;
+
     void Start()
     {
         weapon.SetEnemyTag(enemyTag);
@@ -39,11 +42,20 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        karetText.text = karet.ToString();
+
+        if (Input.GetMouseButtonDown(0) && !fire && karet > 0)
         {
             fire = true;
+            karet--;
         }
 
+        if (Input.GetMouseButtonDown(0) && !fire && karet == 0)
+        {
+            fire = false;
+            karet--;
+        }
+        
         if (fire && firePower < maxFirePower)
         {
             firePower += Time.deltaTime * firePowerSpeed;
@@ -64,5 +76,14 @@ public class WeaponController : MonoBehaviour
         float newWidth = (percentOutOf / 100) * powerBarStartWidth;
 
         powerBar.sizeDelta = new Vector2(newWidth, powerBar.sizeDelta.y);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Karet"))
+        {
+            other.gameObject.SetActive(false);
+            karet = karet + 1;
+        }
     }
 }

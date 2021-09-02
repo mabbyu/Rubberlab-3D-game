@@ -28,6 +28,8 @@ public class WeaponController : MonoBehaviour
     public int karet;
     public Text karetText;
 
+    //public bool isFiring;
+
     void Start()
     {
         weapon.SetEnemyTag(enemyTag);
@@ -44,16 +46,12 @@ public class WeaponController : MonoBehaviour
     {
         karetText.text = karet.ToString();
 
-        if (Input.GetMouseButtonDown(0) && !fire && karet > 0)
+        if (Input.GetMouseButtonDown(0) && !fire && !weapon.isReloading)
         {
-            fire = true;
-            karet--;
-        }
-
-        if (Input.GetMouseButtonDown(0) && !fire && karet == 0)
-        {
-            fire = false;
-            karet--;
+            if (karet > 0)
+                fire = true;
+            else
+                fire = false;
         }
         
         if (fire && firePower < maxFirePower)
@@ -66,6 +64,7 @@ public class WeaponController : MonoBehaviour
             weapon.Fire(firePower);
             firePower = 0;
             fire = false;
+            karet--;
         }
         UpdateUI();
     }
@@ -80,7 +79,7 @@ public class WeaponController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Karet"))
+        if (other.gameObject.CompareTag("Karet") && other.gameObject.GetComponent<Karet>().canPick == true && other.gameObject.GetComponent<Karet>().isFired == true)
         {
             other.gameObject.SetActive(false);
             karet = karet + 1;

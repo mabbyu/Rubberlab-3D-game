@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7987125403715829406}
-  - component: {fileID: 7987125403715829400}
   - component: {fileID: 7987125403715829407}
   - component: {fileID: 88233341}
   - component: {fileID: 2553148608409352225}
+  - component: {fileID: 2762123250809738473}
   m_Layer: 10
   m_Name: Karet
   m_TagString: Karet
@@ -29,25 +29,12 @@ Transform:
   m_GameObject: {fileID: 7987125403715829405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 7987125404981852898}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7987125403715829400
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7987125403715829405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7987125403715829407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,6 +66,7 @@ MonoBehaviour:
   damage: 50
   torque: 10
   rigidbody: {fileID: 7987125403715829407}
+  karetEnemy: 0
 --- !u!114 &2553148608409352225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +83,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   skinWidth: 0.1
+--- !u!135 &2762123250809738473
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987125403715829405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7987125404981852897
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +107,7 @@ GameObject:
   - component: {fileID: 7987125404981852898}
   - component: {fileID: 7987125404981852909}
   - component: {fileID: 7987125404981852908}
-  - component: {fileID: 7987125404981852899}
+  - component: {fileID: 6976157398385019011}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
@@ -177,8 +178,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7987125404981852899
-BoxCollider:
+--- !u!135 &6976157398385019011
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,5 +189,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

@@ -17,6 +17,14 @@ public class Karet : MonoBehaviour
 
     private bool didHit;
 
+    public bool karetEnemy;
+
+    float ct = 1;
+
+    public bool canPick;
+
+    public bool isFired;
+
     public void SetEnemyTag(string enemyTag)
     {
         this.enemyTag = enemyTag;
@@ -46,5 +54,14 @@ public class Karet : MonoBehaviour
         //rigidbody.angularVelocity = Vector3.zero;
         //rigidbody.isKinematic = true;
         //transform.SetParent(collider.transform);
+    }
+
+    void Update()
+    {
+        ct -= Time.deltaTime;
+        if (ct <= 0)
+        {
+            canPick = true;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
 
     private string enemyTag;
 
-    private bool isReloading;
+    public bool isReloading;
 
     public void SetEnemyTag(string enemyTag)
     {
@@ -46,7 +46,9 @@ public class Weapon : MonoBehaviour
         if (isReloading || currentKaret == null) return;
         var force = spawnPoint.TransformDirection(Vector3.forward * firePower);
         currentKaret.Fly(force);
+        currentKaret.isFired = true;
         currentKaret = null;
+
         Reload();
     }
 

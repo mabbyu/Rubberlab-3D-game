@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466872663785364969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0.49, z: 0.56500006}
-  m_LocalScale: {x: 0.49999997, y: 0.40204996, z: 0.1276}
+  m_LocalPosition: {x: 0.254, y: -0.36, z: 1.029}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8466872663904290957}
-  m_RootOrder: 1
+  m_Father: {fileID: 8466872664992573874}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8466872663898236116
 GameObject:
@@ -123,8 +123,6 @@ GameObject:
   - component: {fileID: 8466872663904290957}
   - component: {fileID: 8466872663904290952}
   - component: {fileID: 8466872663904290955}
-  - component: {fileID: 8466872663904290954}
-  - component: {fileID: 8466872663904290953}
   m_Layer: 8
   m_Name: Senjata
   m_TagString: Untagged
@@ -140,11 +138,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466872663904290956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44, y: -0.2, z: 0.3646}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.8652}
+  m_LocalPosition: {x: 0.384, y: -0.181, z: 0.5393}
+  m_LocalScale: {x: 0.14953126, y: 0.235625, z: 0.94938}
   m_Children:
   - {fileID: 7882841786572931626}
-  - {fileID: 8466872663785364982}
   m_Father: {fileID: 8466872664109652092}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -197,34 +194,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8466872663904290954
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466872663904290956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8466872663904290953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466872663904290956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07e9600709d1bb14498ea03a5ba6c841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reloadTime: 0.5
-  karetPrefab: {fileID: 88233341, guid: 2a22d72333ba7994cadfad470043704a, type: 3}
-  spawnPoint: {fileID: 8466872663785364982}
 --- !u!1 &8466872664037131860
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +255,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.3, z: 0.5}
   m_Children: []
   m_Father: {fileID: 8466872664992573874}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8466872664093220466
 MeshFilter:
@@ -359,7 +328,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8466872664109652092}
-  - component: {fileID: 8466872664507771650}
   m_Layer: 8
   m_Name: senjataPrefab
   m_TagString: Untagged
@@ -376,25 +344,12 @@ Transform:
   m_GameObject: {fileID: 8466872664109652095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08, y: -0.22300003, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8466872663904290957}
   m_Father: {fileID: 8466872664992573874}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8466872664507771650
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466872664109652095}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 10.067627, z: 1.2}
-  m_Center: {x: 0, y: -3.7660313, z: 0}
 --- !u!1 &8466872664596088412
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb14ed95daa6b4242b5c7ae09dd49a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 8466872663904290953}
+  weapon: {fileID: 5956490677071687847}
   enemyTag: enemyBocah
   maxFirePower: 100
   firePowerSpeed: 100
@@ -563,6 +518,7 @@ GameObject:
   - component: {fileID: 8466872664992573877}
   - component: {fileID: 8466872664992573876}
   - component: {fileID: 8466872664992573875}
+  - component: {fileID: 5956490677071687847}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -581,6 +537,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.23, z: -0.158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8466872663785364982}
   - {fileID: 8466872664093220471}
   - {fileID: 8466872664109652092}
   m_Father: {fileID: 8466872664596088413}
@@ -651,6 +608,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 8466872664750637158}
+--- !u!114 &5956490677071687847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466872664992573879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e9600709d1bb14498ea03a5ba6c841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadTime: 0.5
+  karetPrefab: {fileID: 88233341, guid: 2a22d72333ba7994cadfad470043704a, type: 3}
+  spawnPoint: {fileID: 8466872663785364982}
+  isReloading: 0
 --- !u!1 &9182227885621463070
 GameObject:
   m_ObjectHideFlags: 0

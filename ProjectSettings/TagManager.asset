@@ -8,6 +8,7 @@ TagManager:
   - enemyBK
   - Karet
   - enemyNPC
+  - Way Point
   layers:
   - Default
   - TransparentFX

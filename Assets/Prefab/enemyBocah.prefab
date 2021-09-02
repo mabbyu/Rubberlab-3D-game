@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1329938477040296066}
   - component: {fileID: 1329938477040296065}
   - component: {fileID: 1329938477040296068}
-  - component: {fileID: -7976388530333285547}
+  - component: {fileID: -1687591835977589579}
   m_Layer: 0
   m_Name: enemyBocah
   m_TagString: enemyBocah
@@ -202,14 +202,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329938477040296064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.7077387, z: -0, w: 0.70647436}
   m_LocalPosition: {x: 0, y: 1.55, z: 1.964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1329938477037337381}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.102, z: 0}
 --- !u!114 &1329938477040296066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,19 +257,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &-7976388530333285547
-MonoBehaviour:
+--- !u!135 &-1687591835977589579
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329938477040296064}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea836590d3aff543834f4e486746b2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transform_Player: {fileID: 1438464704592933465, guid: b4a3f399c6837b34cb9dfd6cf5587e43, type: 3}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1329938478155384083
 GameObject:
   m_ObjectHideFlags: 0

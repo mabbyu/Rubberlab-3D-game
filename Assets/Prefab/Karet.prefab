@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  torque: 5
+  torque: 10
   rigidbody: {fileID: 7987125403715829407}
 --- !u!114 &2553148608409352225
 MonoBehaviour:

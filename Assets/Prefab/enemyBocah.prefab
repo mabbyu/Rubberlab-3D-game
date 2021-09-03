@@ -349,7 +349,7 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 0}
   spotter: {fileID: 1698281898}
-  minDis: 10
+  minDis: 7
   attackDis: 5
   rotateSpeed: 1
   wayPointDist: 5

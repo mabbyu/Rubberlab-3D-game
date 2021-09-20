@@ -25,13 +25,6 @@ public class HealthControl : MonoBehaviour
 
     private bool isDead;
 
-    //score
-    public GameObject scoreText;
-    public float currScore;
-
-    public GameObject alive;
-    public GameObject death;
-
     void Start()
     {
         //meshRenderer = GetComponent<MeshRenderer>();
@@ -44,8 +37,6 @@ public class HealthControl : MonoBehaviour
     {
         if (isDead) return;
 
-        currScore += damage;
-
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -56,12 +47,9 @@ public class HealthControl : MonoBehaviour
             healthPanel.SetActive(false);
 
             StartCoroutine(RespawnAfterTime());
-            var t = Instantiate(scoreText, transform.position, transform.rotation);
-            t.GetComponent<TextMesh>().text = currScore.ToString("N0");
-            GameController.instance.score += currScore;
             Destroy(gameObject);
+        }
 
-        } 
         UpdateUI();
     }
 

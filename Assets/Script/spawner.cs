@@ -10,14 +10,15 @@ public class spawner : MonoBehaviour
     public float ammount;
     public float ammountMultiplier;
 
+    public float maxFireRate;
+    private float curFireRate;
+
     private GameObject Player;
 
     private GameObject selectedSpawn;
     public GameObject[] Spawns;
 
     private int index;
-
-    GameObject currentEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -31,31 +32,28 @@ public class spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnObj();
+        curFireRate -= Time.deltaTime * 1;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            
+            spawnObj();
         }
     }
 
     void spawnObj ()
     {
-        if(ammount > 0)
-        { 
-            if(currentEnemy == null)
-            {
-                index = Random.Range(0, Spawns.Length);
-                selectedSpawn = Spawns[index];
+        if(curFireRate <= 0 && ammount > 0)
+        {
+            index = Random.Range(0, Spawns.Length);
+            selectedSpawn = Spawns[index];
 
-                var A = Instantiate(Enemy, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
-                currentEnemy = A;
+            Instantiate(Enemy, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
 
-                ammount -= 1;
-            }
+            ammount -= 1;
+            curFireRate = maxFireRate;
         }
         else
         {

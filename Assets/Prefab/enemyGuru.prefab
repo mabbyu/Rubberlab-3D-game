@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92700c003e4b1aa4abfb407a878c8233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   respawnTime: 5
   healthPanel: {fileID: 1329938476827425457}
   healthBar: {fileID: 1329938478337799881}
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 6221955972603417605}
   - component: {fileID: 6519229338126065830}
   - component: {fileID: 8942110269624219603}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: damage
   m_Icon: {fileID: 0}

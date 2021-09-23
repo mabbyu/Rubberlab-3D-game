@@ -60,8 +60,6 @@ public class HealthControlGuru : MonoBehaviour
 
         currentHealth -= damage;
 
-       
-
         GetComponent<AudioSource>().PlayOneShot(getHit);
     }
 

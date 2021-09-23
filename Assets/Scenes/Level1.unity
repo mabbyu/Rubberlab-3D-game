@@ -10938,8 +10938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 618.65814, y: 442.80267}
-  m_SizeDelta: {x: -1280.5233, y: -922.4613}
+  m_AnchoredPosition: {x: 579.2325, y: 442.80267}
+  m_SizeDelta: {x: -1201.672, y: -922.4613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1284762600
 MonoBehaviour:
@@ -12873,7 +12873,7 @@ MonoBehaviour:
   healthText: {fileID: 1584033343}
   playerHealth: {fileID: 8466872665170193713}
   scoreText: {fileID: 1028480938}
-  currScore: 0
+  currScore: 100
   maxScore: 200
   timerText: {fileID: 326643881}
   time: 120
@@ -22428,7 +22428,7 @@ MonoBehaviour:
   maxFirePower: 100
   firePowerSpeed: 100
   powerBar: {fileID: 40284661}
-  karet: 15
+  karet: 25
   karetText: {fileID: 556553050}
 --- !u!114 &8466872665170193713
 MonoBehaviour:

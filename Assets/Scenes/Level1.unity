@@ -4270,7 +4270,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a25a5732e832eb646992b1a432a3b995, type: 3}
+    m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -9314,7 +9314,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a25a5732e832eb646992b1a432a3b995, type: 3}
+    m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -9326,7 +9326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: O
 --- !u!222 &1028480939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10938,8 +10938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 669.37335, y: 442.80267}
-  m_SizeDelta: {x: -1381.9537, y: -922.4613}
+  m_AnchoredPosition: {x: 618.65814, y: 442.80267}
+  m_SizeDelta: {x: -1280.5233, y: -922.4613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1284762600
 MonoBehaviour:
@@ -11855,8 +11855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -740.0449, y: 442.80267}
-  m_SizeDelta: {x: -1526.7169, y: -922.4613}
+  m_AnchoredPosition: {x: -728.20935, y: 442.80267}
+  m_SizeDelta: {x: -1503.0458, y: -922.4613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446107605
 MonoBehaviour:
@@ -20105,7 +20105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &5334037120228358102
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22001,7 +22001,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466872663673910044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -22154,7 +22154,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8466872663786743270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

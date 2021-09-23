@@ -23,6 +23,10 @@ public class HealthControl : MonoBehaviour
 
     public GameObject meshRenderer;
 
+    public GameObject deadObject;
+
+    public float scoreGame;
+
     private bool isDead;
 
     void Start()
@@ -35,22 +39,19 @@ public class HealthControl : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        if (isDead) return;
+        //if (isDead) return;
+     
+        scoreGame = damage;
 
-        currentHealth -= damage;
+        GameController.instance.currScore += scoreGame;
 
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            isDead = true;
-            meshRenderer.SetActive(false);
-            healthPanel.SetActive(false);
+        var a = Instantiate(deadObject, transform.position, transform.rotation);
+        a.GetComponentInChildren<Text>().text = scoreGame.ToString();
 
-            StartCoroutine(RespawnAfterTime());
-            Destroy(gameObject);
-        }
+        StartCoroutine(RespawnAfterTime());
+        Destroy(gameObject);
 
-        UpdateUI();
+        //UpdateUI();
     }
 
     private IEnumerator RespawnAfterTime()
@@ -70,8 +71,8 @@ public class HealthControl : MonoBehaviour
 
     private void UpdateUI()
     {
-        float percentOutOf = (currentHealth / maxHealth) * 100;
-        float newWidth = (percentOutOf / 100) * healthBarStartWidth;
+        float percentOutOf = (currentHealth / maxHealth) * 10;
+        float newWidth = (percentOutOf / 10) * healthBarStartWidth;
 
         healthBar.sizeDelta = new Vector2(newWidth, healthBar.sizeDelta.y);
     }

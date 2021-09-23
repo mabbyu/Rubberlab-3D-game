@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public NavMeshAgent agent;
+
     public Transform target;
 
     public Transform player;
@@ -38,6 +40,19 @@ public class enemy : MonoBehaviour
 
     bool isAttacking;
 
+    //footstep
+    bool isWalking;
+    
+    public float FootstepDelayTime;
+
+    float wt;
+
+    public AudioSource audioFootstep;
+
+    //angry
+    bool isChasing;
+    public AudioSource angryAudio;
+
     void Start()
     {
         curFireRate = fireRate;
@@ -65,19 +80,20 @@ public class enemy : MonoBehaviour
             var targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
             var distance = Vector3.Distance(target.position, transform.position);
 
-
             transform.LookAt(targetPos);
 
-
-            if (distance <= minDis && curFireRate <= 0)
+            if (distance <= minDis && curFireRate <= 0) //ChasePlayer();
             {
                 if (seePlayer)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+                    isChasing = true;
+                    angryAudio.Play();
                 }
                 else
                 {
-
+                    isChasing = false;
+                    angryAudio.Stop();
                 }
             }
 
@@ -101,7 +117,6 @@ public class enemy : MonoBehaviour
                     seePlayer = false;
                 }
             }
-
         }
         else //patroli
         {
@@ -113,7 +128,6 @@ public class enemy : MonoBehaviour
             transform.LookAt(targetPos);
 
             var dist = Vector3.Distance(transform.position, target.position);
-
 
             if (dist <= wayPointDist)
             {
@@ -129,13 +143,35 @@ public class enemy : MonoBehaviour
         {
             isAttacking = false;
         }
+        //footstep
+        if (dist2 >= minDis)
+        {
+            isWalking = true;
+            wt -= Time.deltaTime;
+        }
+        else
+        {
+            isWalking = false;
+            audioFootstep.Stop();
+        }
+
+        if (wt <= 0)
+        {
+            wt = FootstepDelayTime;
+            audioFootstep.Play();
+        }
     }
+    
+    /*void ChasePlayer()
+    {
+        agent.SetDestination(player.position);
+    }*/
 
     void NewWaypoint()
     {
-        int index = Random.Range(0, wp.ToArray().Length);
-        curWP = wp[index];
-        target = curWP;
+          int index = Random.Range(0, wp.ToArray().Length);
+          curWP = wp[index];
+          target = curWP;
     }
 
     void Fire()
@@ -153,7 +189,6 @@ public class enemy : MonoBehaviour
 
         GetComponent<AudioSource>().PlayOneShot(fireSound);
         curFireRate = fireRate;
-
 
     }
 }

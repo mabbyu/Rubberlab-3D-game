@@ -43,10 +43,18 @@ public class Karet : MonoBehaviour
         if (didHit) return;
         didHit = true;
 
-        if (collider.CompareTag(enemyTag))
+        if (karetEnemy)
         {
-            var health = collider.GetComponent<HealthControl>();
-            health.ApplyDamage(damage);    
+            collider.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+        }
+        else
+        {
+            if (collider.CompareTag(enemyTag))
+            {
+                //var health = collider.GetComponent<HealthControl>();
+                //health.ApplyDamage(damage);
+                collider.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+            }
         }
 
         print(collider.gameObject.name);

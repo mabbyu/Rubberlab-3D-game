@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,10 +18,29 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    /*void Start()
+    public AudioClip getHit;
+
+    //health
+    //public GameObject healthLogo;
+
+    public float currentHealth;
+    public float maxHealth;
+
+    private bool isDead;
+
+    //footstep
+    bool isWalking;
+
+    public float FootstepDelayTime;
+
+    float wt;
+
+    public AudioSource audioFootstep;
+
+    void Start()
     {
-        characterController = GetComponent<CharacterController>();
-    }*/
+        currentHealth = maxHealth;
+    }
 
     void Update()
     {
@@ -38,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump")) /*&& isGrounded)*/
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
@@ -46,5 +66,47 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            isDead = true;
+
+            GameController.instance.LoseGame();
+        }
+
+        //footstep
+        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) 
+        {
+            isWalking = true;
+            wt -= Time.deltaTime;
+        }
+        else
+        {
+            isWalking = false;
+            audioFootstep.Stop();
+        }
+
+        if(wt <= 0)
+        {
+            wt = FootstepDelayTime;
+            if(isGrounded)
+            audioFootstep.Play();
+        }
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        GetComponent<AudioSource>().PlayOneShot(getHit);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("damage"))
+        {
+            gameObject.SendMessage("ApplyDamage", 100, SendMessageOptions.DontRequireReceiver);
+        }
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - Karet
   - enemyNPC
   - Way Point
+  - Ground
+  - damage
   layers:
   - Default
   - TransparentFX

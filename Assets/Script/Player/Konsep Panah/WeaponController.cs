@@ -35,38 +35,38 @@ public class WeaponController : MonoBehaviour
         weapon.SetEnemyTag(enemyTag);
         weapon.Reload();
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
         firePower = 0;
         powerBarStartWidth =powerBar.sizeDelta.x;
     }
 
     void Update()
     {
-        karetText.text = karet.ToString();
+        //if (!PausePanel.isPaused)
+        //{
+            karetText.text = karet.ToString();
 
-        if (Input.GetMouseButtonDown(0) && !fire && !weapon.isReloading)
-        {
-            if (karet > 0)
-                fire = true;
-            else
+            if (Input.GetMouseButtonDown(0) && !fire && !weapon.isReloading)
+            {
+                if (karet > 0)
+                    fire = true;
+                else
+                    fire = false;
+            }
+
+            if (fire && firePower < maxFirePower)
+            {
+                firePower += Time.deltaTime * firePowerSpeed;
+            }
+
+            if (fire && Input.GetMouseButtonUp(0))
+            {
+                weapon.Fire(firePower);
+                firePower = 0;
                 fire = false;
-        }
-        
-        if (fire && firePower < maxFirePower)
-        {
-            firePower += Time.deltaTime * firePowerSpeed;
-        }
-
-        if (fire && Input.GetMouseButtonUp(0))
-        {
-            weapon.Fire(firePower);
-            firePower = 0;
-            fire = false;
-            karet--;
-        }
-        UpdateUI();
+                karet--;
+            }
+            UpdateUI();
+        //}
     }
 
     void UpdateUI() 

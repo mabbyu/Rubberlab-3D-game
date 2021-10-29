@@ -12,7 +12,11 @@ public class GameController : MonoBehaviour
     public GameObject mainPanel;
     public GameObject pausePanel;
     public GameObject optionPanel;
-    public GameObject winPanel;
+
+    public GameObject winPanel1;
+    public GameObject winPanel2;
+    public GameObject winPanel3;
+
     public GameObject losePanel;
     //public GameObject optionPanel;
 
@@ -60,12 +64,12 @@ public class GameController : MonoBehaviour
         
 
         //score
-        scoreText.text = "SCORE: " + currScore.ToString() + "/" + maxScore.ToString();
+        scoreText.text = "SCORE: " + currScore.ToString();
 
-        if (currScore >= maxScore)
+        /*if (currScore >= maxScore)
         {
             WinGame();
-        }
+        }*/
 
         if (currScore >= (maxScore / 2))
         {
@@ -99,14 +103,38 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
 
         }
-        if(GameActived && time <= 0)
+        
+        //score
+        if(GameActived && time <= 0 && currScore >= 700 )
+        {
+            lastSecond.Stop();
+            //LoseGame();
+            WinGame();
+        }
+
+        if (GameActived && time <= 0 && currScore >= 500)
+        {
+            lastSecond.Stop();
+            //LoseGame();
+            WinGame2();
+        }
+
+        if (GameActived && time <= 0 && currScore >= 300)
+        {
+            lastSecond.Stop();
+            //LoseGame();
+            WinGame3();
+        }
+
+        if (GameActived && time <= 0 && currScore <= 300)
         {
             lastSecond.Stop();
             LoseGame();
+            //WinGame();
         }
 
         //pause
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(isPaused)
             {
@@ -167,13 +195,37 @@ public class GameController : MonoBehaviour
     public void WinGame()
     {
         GameActived = false;
-        winPanel.SetActive(true);
+        winPanel3.SetActive(true);
         mainPanel.SetActive(false);
         pausePanel.SetActive(false);
         isPaused = true;
 
         if (!timerEnd.isPlaying)
         timerEnd.Play();
+    }
+
+    public void WinGame2()
+    {
+        GameActived = false;
+        winPanel2.SetActive(true);
+        mainPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        isPaused = true;
+
+        if (!timerEnd.isPlaying)
+            timerEnd.Play();
+    }
+
+    public void WinGame3()
+    {
+        GameActived = false;
+        winPanel1.SetActive(true);
+        mainPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        isPaused = true;
+
+        if (!timerEnd.isPlaying)
+            timerEnd.Play();
     }
 
     public void LoseGame()

@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f06ea7f5999b3eb4d97b0bcd6fab08b9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -597,9 +597,11 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  getHit: {fileID: 0}
   currentHealth: 0
   maxHealth: 50
-  footStep: {fileID: 0}
+  FootstepDelayTime: 0
+  audioFootstep: {fileID: 0}
 --- !u!114 &8466872664750637146
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
 
 
         //health
-        healthText.text = (playerHealth.currentHealth / 10).ToString();
+        healthText.text = (playerHealth.currentHealth / 10).ToString("N0");
         
 
         //score

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip getHit;
 
+    public GameObject spawnPoint;
+
     //health
     //public GameObject healthLogo;
 
@@ -97,16 +99,27 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyDamage(float damage)
     {
-        currentHealth -= damage;
+        //currentHealth -= damage;
+        GameController.instance.currScore -= damage;
 
         GetComponent<AudioSource>().PlayOneShot(getHit);
+    }
+
+    public void ApplyDamageGuru(float damage)
+    {
+        currentHealth -= damage;
+        //GameController.instance.currScore -= damage;
+
+        GetComponent<AudioSource>().PlayOneShot(getHit);
+        transform.position = spawnPoint.transform.position;
+        transform.rotation = spawnPoint.transform.rotation;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("damage"))
         {
-            gameObject.SendMessage("ApplyDamage", 100, SendMessageOptions.DontRequireReceiver);
+            gameObject.SendMessage("ApplyDamageGuru", 10, SendMessageOptions.DontRequireReceiver);
         }
     }
 }

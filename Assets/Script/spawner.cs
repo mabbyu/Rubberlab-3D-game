@@ -5,9 +5,13 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
 
+    public float maxEnemy;
+
     public GameObject Enemy;
 
-    GameObject currEnemy;
+    public bool isGuru;
+
+    //GameObject[] currEnemy;
 
     private GameObject Player;
     
@@ -16,6 +20,10 @@ public class spawner : MonoBehaviour
 
     private int index;
 
+    public List<GameObject> currEnemy = new List<GameObject>();
+
+    int f = 1;
+
     void Start()
     {
         
@@ -23,11 +31,21 @@ public class spawner : MonoBehaviour
 
     void Update()
     {
-        if(!currEnemy)
+        if(!isGuru)
         {
+            if (currEnemy.ToArray().Length < maxEnemy)
+            {
+                spawnObj();
+            }
+        }
+        else
+        {
+            if(f > 0)
             spawnObj();
         }
     }
+
+   
 
     private void OnTriggerStay(Collider other)
     {
@@ -36,10 +54,13 @@ public class spawner : MonoBehaviour
 
     void spawnObj ()
     {
+        f = 0;
         index = Random.Range(0, Spawns.Length);
         selectedSpawn = Spawns[index];
 
         var a = Instantiate(Enemy, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
-        currEnemy = a;
+        if (!isGuru)
+        a.GetComponent<HealthControl>().s = this;
+        currEnemy.Add(a);
     }
 }

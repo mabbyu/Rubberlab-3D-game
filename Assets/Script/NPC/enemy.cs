@@ -24,6 +24,7 @@ public class enemy : MonoBehaviour
 
     public float damage;
     public float moveSpeed;
+    float currSpeed;
 
     public GameObject Bullet;
     public Transform spawn;
@@ -53,6 +54,9 @@ public class enemy : MonoBehaviour
     bool isChasing;
     public AudioSource angryAudio;
 
+    //animation
+    public Animator animator;
+
     void Start()
     {
         curFireRate = fireRate;
@@ -64,6 +68,7 @@ public class enemy : MonoBehaviour
             wp.Add(wpa.transform);
         }
 
+        currSpeed = moveSpeed;
         NewWaypoint();
     }
 
@@ -86,7 +91,7 @@ public class enemy : MonoBehaviour
             {
                 if (seePlayer)
                 {
-                    transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+                    transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
                     isChasing = true;
                     angryAudio.Play();
                 }
@@ -95,6 +100,11 @@ public class enemy : MonoBehaviour
                     isChasing = false;
                     angryAudio.Stop();
                 }
+            }
+            else
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
+                isAttacking = false;
             }
 
             if (distance <= attackDis && curFireRate <= 0)
@@ -120,7 +130,8 @@ public class enemy : MonoBehaviour
         }
         else //patroli
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+
+            transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
             spotter.transform.LookAt(target);
 
             var targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
@@ -142,6 +153,10 @@ public class enemy : MonoBehaviour
         else
         {
             isAttacking = false;
+            if (target == player)
+            {
+                NewWaypoint();
+            }
         }
         //footstep
         if (dist2 >= minDis)
@@ -160,6 +175,9 @@ public class enemy : MonoBehaviour
             wt = FootstepDelayTime;
             audioFootstep.Play();
         }
+
+        animator.SetFloat("currSpeed", currSpeed);
+        animator.SetBool("isAttacking", isAttacking);
     }
     
     /*void ChasePlayer()

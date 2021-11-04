@@ -29,6 +29,8 @@ public class HealthControl : MonoBehaviour
 
     private bool isDead;
 
+    public spawner s;
+
     void Start()
     {
         //meshRenderer = GetComponent<MeshRenderer>();
@@ -50,6 +52,8 @@ public class HealthControl : MonoBehaviour
 
         StartCoroutine(RespawnAfterTime());
         Destroy(gameObject);
+
+        s.currEnemy.Remove(gameObject);
 
         //UpdateUI();
     }

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6287fac3654bb468d9a7ad9a9f15c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
   torque: 10
   rigidbody: {fileID: 7987125403715829407}
   karetEnemy: 0

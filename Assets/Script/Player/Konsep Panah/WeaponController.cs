@@ -28,6 +28,8 @@ public class WeaponController : MonoBehaviour
     public int karet;
     public Text karetText;
 
+    //public MeshRenderer karetMesh;
+
     //public bool isFiring;
 
     void Start()
@@ -45,13 +47,18 @@ public class WeaponController : MonoBehaviour
         //{
             karetText.text = karet.ToString();
 
-            if (Input.GetMouseButtonDown(0) && !fire && !weapon.isReloading)
-            {
-                if (karet > 0)
-                    fire = true;
-                else
-                    fire = false;
-            }
+        if (Input.GetMouseButtonDown(0) && !fire && !weapon.isReloading)
+        {
+            if (karet > 0)
+                fire = true;
+            else
+                fire = false;
+            //karetMesh.enabled = true;
+        }
+        //else
+        //{
+            //karetMesh.enabled = false;
+        //}
 
             if (fire && firePower < maxFirePower)
             {

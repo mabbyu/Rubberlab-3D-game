@@ -23,6 +23,7 @@ public class enemyGuru : MonoBehaviour
 
     public float damage;
     public float moveSpeed;
+    float currSpeed;
 
     public Transform spawn;
 
@@ -31,6 +32,9 @@ public class enemyGuru : MonoBehaviour
 
 
     bool isAttacking;
+
+
+    public bool isDead;
 
     void Start()
     {
@@ -62,12 +66,16 @@ public class enemyGuru : MonoBehaviour
             {
                 if (seePlayer)
                 {
-                    transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+                    transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
                 }
                 else
                 {
-
+                    isAttacking = false;
                 }
+            }
+            else
+            {
+                isAttacking = false;
             }
 
             Vector3 dir = spotter.transform.TransformDirection(new Vector3(0, 0, 1));
@@ -87,7 +95,7 @@ public class enemyGuru : MonoBehaviour
         }
         else //patroli
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+            transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
             spotter.transform.LookAt(target);
 
             var targetPos = new Vector3(target.position.x, transform.position.y, target.position.z);
@@ -110,6 +118,19 @@ public class enemyGuru : MonoBehaviour
         else
         {
             isAttacking = false;
+            if (target == player)
+            {
+                NewWaypoint();
+            }
+        }
+
+        if (isDead)
+        {
+            currSpeed = 0;
+        }
+        else
+        {
+            currSpeed = moveSpeed;
         }
     }
 

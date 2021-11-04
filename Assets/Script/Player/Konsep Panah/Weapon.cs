@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
         currentKaret = Instantiate(karetPrefab, spawnPoint);
         currentKaret.transform.localPosition = Vector3.zero;
         currentKaret.SetEnemyTag(enemyTag);
+        currentKaret.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         isReloading = false;
     }
 
@@ -47,7 +48,9 @@ public class Weapon : MonoBehaviour
         var force = spawnPoint.TransformDirection(Vector3.forward * firePower);
         currentKaret.Fly(force);
         currentKaret.isFired = true;
+        currentKaret.gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
         currentKaret = null;
+        
 
         Reload();
     }

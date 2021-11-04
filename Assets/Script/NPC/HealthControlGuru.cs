@@ -31,6 +31,8 @@ public class HealthControlGuru : MonoBehaviour
 
     public AudioClip getHit;
 
+    public enemyGuru mainObject;
+
     void Start()
     {
         //meshRenderer = GetComponent<MeshRenderer>();
@@ -50,7 +52,7 @@ public class HealthControlGuru : MonoBehaviour
 
             StartCoroutine(RespawnAfterTime());
         }
-
+        mainObject.isDead = isDead;
         UpdateUI();
     }
 

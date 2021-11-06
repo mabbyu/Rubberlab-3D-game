@@ -55,7 +55,10 @@ public class enemy : MonoBehaviour
     public AudioSource angryAudio;
 
     //animation
-    public Animator animator;
+    Animator animator;
+
+    public Animator boy;
+    public Animator girl;
 
     void Start()
     {
@@ -70,6 +73,20 @@ public class enemy : MonoBehaviour
 
         currSpeed = moveSpeed;
         NewWaypoint();
+
+        int index = Random.Range(0, 2);
+        if(index == 1)
+        {
+            animator = boy;
+            boy.gameObject.SetActive(true);
+            girl.gameObject.SetActive(false);
+        }
+        else
+        {
+            animator = girl;
+            girl.gameObject.SetActive(true);
+            boy.gameObject.SetActive(false);
+        }    
     }
 
     void Update()

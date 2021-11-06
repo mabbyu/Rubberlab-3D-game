@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource audioFootstep;
 
+    public GameObject walkAnim;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -82,11 +84,13 @@ public class PlayerController : MonoBehaviour
         {
             isWalking = true;
             wt -= Time.deltaTime;
+            walkAnim.GetComponent<Animation>().CrossFade("walk");
         }
         else
         {
             isWalking = false;
             audioFootstep.Stop();
+            walkAnim.GetComponent<Animation>().CrossFade("idle");
         }
 
         if(wt <= 0)

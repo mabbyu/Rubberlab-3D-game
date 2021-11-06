@@ -28,6 +28,10 @@ public class WeaponController : MonoBehaviour
     public int karet;
     public Text karetText;
 
+    public Transform kickWep;
+    public float kickUp = 0.5f;
+    public float kickSideways = 0.5f;
+
     //public MeshRenderer karetMesh;
 
     //public bool isFiring;
@@ -71,7 +75,8 @@ public class WeaponController : MonoBehaviour
                 firePower = 0;
                 fire = false;
                 karet--;
-            }
+                kickWep.localRotation = Quaternion.Euler(kickWep.localRotation.eulerAngles - new Vector3(Random.Range(-kickUp, kickUp), Random.Range(-kickSideways, kickSideways), Random.Range(-kickSideways, kickSideways)));
+        }
             UpdateUI();
         //}
     }

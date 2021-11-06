@@ -1,11 +1,20 @@
 fileFormatVersion: 2
-guid: 01fe8675cab17664bb3b9aaf83ab6c8d
+guid: 0b908a18f3790f64dbf9766c87a1b877
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -1422011007694221501
-    second: Armature|ArmatureAction.001
+      74: 5452461072499813555
+    second: Armature|Armature|Armature|ArmatureAction.001|Armature|ArmatureActio.000
+  - first:
+      74: 7099615945631834390
+    second: Armature|Armature|Armature|ArmatureAction.001|Armature|ArmatureAction.00
+  - first:
+      74: 8450808836658823645
+    second: Armature|Armature|Armature|ArmatureAction|Armature|ArmatureAction
+  - first:
+      74: 8139763015835497580
+    second: Armature|Armature|Armature|Armature|Armature|ArmatureAction|Armature|Arm
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -97,7 +106,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

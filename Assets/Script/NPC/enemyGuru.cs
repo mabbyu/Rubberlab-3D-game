@@ -36,6 +36,10 @@ public class enemyGuru : MonoBehaviour
 
     public bool isDead;
 
+    
+
+    public Animator animator;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -124,14 +128,20 @@ public class enemyGuru : MonoBehaviour
             }
         }
 
+        //stun
         if (isDead)
         {
             currSpeed = 0;
+            animator.SetBool("stun", true);
         }
         else
         {
             currSpeed = moveSpeed;
+            animator.SetBool("stun", false);
         }
+
+        animator.SetFloat("currSpeed", currSpeed);
+        animator.SetBool("isAttacking", isAttacking);
     }
 
     /*void ChasePlayer()

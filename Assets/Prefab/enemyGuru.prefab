@@ -8475,7 +8475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92700c003e4b1aa4abfb407a878c8233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   respawnTime: 5
   healthPanel: {fileID: 1329938476827425457}
   healthBar: {fileID: 1329938478337799881}

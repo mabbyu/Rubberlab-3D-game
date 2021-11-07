@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    bool airJump;
+
     public AudioClip getHit;
 
     public GameObject spawnPoint;
@@ -46,13 +48,35 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+        }
+
+        //double jump
+        if (isGrounded)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+            airJump = true;
+        }
+        else
+        {
+            if (airJump)
+            {
+                
+                if (Input.GetButtonDown("Jump"))
+                {
+                    airJump = false;
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                }
+            }
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -62,10 +86,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * moveSpeed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        
         
         velocity.y += gravity * Time.deltaTime;
 

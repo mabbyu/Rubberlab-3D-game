@@ -20,6 +20,9 @@ public class Weapon : MonoBehaviour
 
     public bool isReloading;
 
+    //karet
+    public GameObject karetBullet;
+
     public void SetEnemyTag(string enemyTag)
     {
         this.enemyTag = enemyTag;
@@ -29,6 +32,7 @@ public class Weapon : MonoBehaviour
     {
         if (isReloading || currentKaret != null) return;
         isReloading = true;
+        karetBullet.SetActive(false);
         StartCoroutine(ReloadAfterTime());
     }
 
@@ -39,6 +43,7 @@ public class Weapon : MonoBehaviour
         currentKaret.transform.localPosition = Vector3.zero;
         currentKaret.SetEnemyTag(enemyTag);
         currentKaret.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        karetBullet.SetActive(true);
         isReloading = false;
     }
 

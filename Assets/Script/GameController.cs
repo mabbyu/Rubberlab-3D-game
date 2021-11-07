@@ -13,11 +13,12 @@ public class GameController : MonoBehaviour
     public GameObject pausePanel;
     public GameObject optionPanel;
 
-    public GameObject winPanel1;
-    public GameObject winPanel2;
-    public GameObject winPanel3;
+    public GameObject winPanelBintang1;
+    public GameObject winPanelBintang2;
+    public GameObject winPanelBintang3;
 
     public GameObject losePanel;
+    public GameObject upgradePanel;
     //public GameObject optionPanel;
 
     //hp player
@@ -109,21 +110,21 @@ public class GameController : MonoBehaviour
         {
             lastSecond.Stop();
             //LoseGame();
-            WinGame();
+            WinGameBintang3();
         }
 
         if (GameActived && time <= 0 && currScore >= 500)
         {
             lastSecond.Stop();
             //LoseGame();
-            WinGame2();
+            WinGameBintang2();
         }
 
         if (GameActived && time <= 0 && currScore >= 300)
         {
             lastSecond.Stop();
             //LoseGame();
-            WinGame3();
+            WinGameBintang1();
         }
 
         if (GameActived && time <= 0 && currScore <= 300)
@@ -192,10 +193,10 @@ public class GameController : MonoBehaviour
         optionPanel.SetActive(true);
     }
 
-    public void WinGame()
+    public void WinGameBintang3()
     {
         GameActived = false;
-        winPanel3.SetActive(true);
+        winPanelBintang3.SetActive(true);
         mainPanel.SetActive(false);
         pausePanel.SetActive(false);
         isPaused = true;
@@ -204,10 +205,10 @@ public class GameController : MonoBehaviour
         timerEnd.Play();
     }
 
-    public void WinGame2()
+    public void WinGameBintang2()
     {
         GameActived = false;
-        winPanel2.SetActive(true);
+        winPanelBintang2.SetActive(true);
         mainPanel.SetActive(false);
         pausePanel.SetActive(false);
         isPaused = true;
@@ -216,10 +217,10 @@ public class GameController : MonoBehaviour
             timerEnd.Play();
     }
 
-    public void WinGame3()
+    public void WinGameBintang1()
     {
         GameActived = false;
-        winPanel1.SetActive(true);
+        winPanelBintang1.SetActive(true);
         mainPanel.SetActive(false);
         pausePanel.SetActive(false);
         isPaused = true;
@@ -232,6 +233,25 @@ public class GameController : MonoBehaviour
     {
         GameActived = false;
         losePanel.SetActive(true);
+        mainPanel.SetActive(false);
+        pausePanel.SetActive(false);
+        isPaused = true;
+
+        if (!timerEnd.isPlaying)
+        timerEnd.Play();
+    }
+
+    public void UpgradePanel()
+    {
+        GameActived = false;
+
+        upgradePanel.SetActive(true);
+        
+        winPanelBintang1.SetActive(false);
+        winPanelBintang2.SetActive(false);
+        winPanelBintang3.SetActive(false);
+        losePanel.SetActive(false);
+
         mainPanel.SetActive(false);
         pausePanel.SetActive(false);
         isPaused = true;

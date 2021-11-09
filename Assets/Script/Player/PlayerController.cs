@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
 
-    public float moveSpeed = 12f;
+    float currSpeed = 12f;
+    public float moveSpeed;
+    public float sprintSpeed;
+
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
 
@@ -46,6 +49,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+     
+        currSpeed = moveSpeed;
+
     }
 
     void FixedUpdate()
@@ -70,11 +76,13 @@ public class PlayerController : MonoBehaviour
         {
             if (airJump)
             {
-                
-                if (Input.GetButtonDown("Jump"))
+                if (Data.canDoubleJump)
                 {
-                    airJump = false;
-                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                        airJump = false;
+                        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    }
                 }
             }
         }
@@ -84,7 +92,16 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * moveSpeed * Time.deltaTime);
+        if (Data.canSprint)
+        {
+            currSpeed = sprintSpeed;
+        }
+        else
+        {
+            currSpeed = moveSpeed;
+        }
+
+        controller.Move(move * currSpeed * Time.deltaTime);
 
         
         

@@ -40,18 +40,18 @@ public class SceneController : MonoBehaviour
 
     public void PilihLevel1()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("1");
     }
 
-    /*
+    
     public void PilihLevel2()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("2");
     }
-
+    /*
     public void PilihLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("3");
     }
     */
     public void OptionMenu()
@@ -74,17 +74,17 @@ public class SceneController : MonoBehaviour
 
     public void RestartLv1()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("1");
     }
-    /*
+    
     public void RestartLv2()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("2");
     }
-
+    /*
     public void RestartLv3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("3");
     }
     */
     public void GoToMainMenu()
@@ -93,13 +93,14 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Loading()
+    {
+        SceneManager.LoadScene("Loading");
+    }
+
+
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void GoToScene(string nama)
-    {
-         SceneManager.LoadScene(nama);
     }
 }

@@ -147,7 +147,6 @@ public class enemy : MonoBehaviour
         }
         else //patroli
         {
-
             transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
             spotter.transform.LookAt(target);
 
@@ -162,6 +161,7 @@ public class enemy : MonoBehaviour
                 NewWaypoint();
             }
         }
+
         var dist2 = Vector3.Distance(transform.position, player.transform.position);
         if (dist2 <= attackDis)
         {
@@ -175,6 +175,7 @@ public class enemy : MonoBehaviour
                 NewWaypoint();
             }
         }
+
         //footstep
         if (dist2 >= minDis)
         {
@@ -196,11 +197,6 @@ public class enemy : MonoBehaviour
         animator.SetFloat("currSpeed", currSpeed);
         animator.SetBool("isAttacking", isAttacking);
     }
-    
-    /*void ChasePlayer()
-    {
-        agent.SetDestination(player.position);
-    }*/
 
     void NewWaypoint()
     {
@@ -211,7 +207,6 @@ public class enemy : MonoBehaviour
 
     void Fire()
     {
-
         var shotBullet = Instantiate(Bullet, spawn.transform.position, spawn.transform.rotation);
         //Instantiate(MFlash, spawn.transform.position, spawn.transform.rotation);
 
@@ -224,6 +219,5 @@ public class enemy : MonoBehaviour
 
         GetComponent<AudioSource>().PlayOneShot(fireSound);
         curFireRate = fireRate;
-
     }
 }

@@ -454,6 +454,11 @@ MonoBehaviour:
   minDis: 10
   attackDis: 5
   rotateSpeed: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
   wayPointDist: 5
   wp: []
   damage: 5

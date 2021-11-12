@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6478752385828202776, guid: ce943f6ad9a4b964fbfd929105fc8e88, type: 3}
       propertyPath: time
-      value: 120
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6478752385828202776, guid: ce943f6ad9a4b964fbfd929105fc8e88, type: 3}
       propertyPath: spawnGuru
@@ -713,43 +713,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: ad8a318a3aa133d42b81f9bef53cda4a, type: 3}
---- !u!114 &1814619352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814619347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d07ce676d7afda4dabb3b0f7dd5e654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
---- !u!1 &2094525363 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2111602277668564656, guid: fba433ef4aaac2f489e07966e64f3022, type: 3}
-  m_PrefabInstance: {fileID: 1264529376497496458}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2094525369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094525363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d07ce676d7afda4dabb3b0f7dd5e654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &2135751217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2537120185129113316, guid: fba433ef4aaac2f489e07966e64f3022, type: 3}

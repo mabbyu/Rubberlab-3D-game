@@ -36,8 +36,20 @@ public class enemyGuru : MonoBehaviour
 
     public bool isDead;
 
-    
+    //footstep
+    bool isWalking;
 
+    public float FootstepDelayTime;
+
+    float wt;
+
+    public AudioSource audioFootstep;
+
+    //angry
+    bool isChasing;
+    public AudioSource angryAudio;
+
+    //animasi
     public Animator animator;
 
     void Start()
@@ -71,10 +83,14 @@ public class enemyGuru : MonoBehaviour
                 if (seePlayer)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * currSpeed);
+                    isChasing = true;
+                    angryAudio.Play();
                 }
                 else
                 {
                     isAttacking = false;
+                    isChasing = false;
+                    angryAudio.Stop();
                 }
             }
             else
@@ -126,6 +142,24 @@ public class enemyGuru : MonoBehaviour
             {
                 NewWaypoint();
             }
+        }
+
+        //footstep
+        if (dist2 >= minDis)
+        {
+            isWalking = true;
+            wt -= Time.deltaTime;
+        }
+        else
+        {
+            isWalking = false;
+            audioFootstep.Stop();
+        }
+
+        if (wt <= 0)
+        {
+            wt = FootstepDelayTime;
+            audioFootstep.Play();
         }
 
         //stun

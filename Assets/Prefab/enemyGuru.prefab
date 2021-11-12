@@ -8507,6 +8507,9 @@ MonoBehaviour:
   spawn: {fileID: 1351852374}
   seePlayer: 0
   isDead: 0
+  FootstepDelayTime: 0
+  audioFootstep: {fileID: 4241135288219662039}
+  angryAudio: {fileID: 596157701201862188}
   animator: {fileID: 5814918422455404603}
 --- !u!136 &1329938477040296065
 CapsuleCollider:
@@ -21632,7 +21635,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2e2635c8aee432e498a663d77dd31b1b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -21646,7 +21649,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:

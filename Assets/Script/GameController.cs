@@ -258,7 +258,6 @@ public class GameController : MonoBehaviour
             timerEnd.Play();
     }
 
-    //upgrade
     public void BackFromUpgrade()
     {
         lastSecond.Stop();

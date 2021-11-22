@@ -48,12 +48,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("2");
     }
-    
+    /*
     public void PilihLevel3()
     {
         SceneManager.LoadScene("3");
     }
-    
+    */
     public void OptionMenu()
     {
         //SceneManager.LoadScene("Option");
@@ -81,33 +81,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("2");
     }
-    
+    /*
     public void RestartLv3()
     {
         SceneManager.LoadScene("3");
     }
-
-    public void CutScene1()
-    {
-        SceneManager.LoadScene("CutScene1");
-    }
-
-    public void CutScene2()
-    {
-        SceneManager.LoadScene("CutScene2");
-    }
-
-    public void CutScene3()
-    {
-        SceneManager.LoadScene("CutScene3");
-    }
-
-    public void CutSceneEnd()
-    {
-        SceneManager.LoadScene("CutSceneEnd");
-    }
-
-
+    */
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;

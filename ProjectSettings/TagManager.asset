@@ -11,6 +11,7 @@ TagManager:
   - Way Point
   - Ground
   - damage
+  - obstacle
   layers:
   - Default
   - TransparentFX

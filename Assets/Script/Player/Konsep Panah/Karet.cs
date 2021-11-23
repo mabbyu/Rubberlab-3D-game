@@ -13,7 +13,7 @@ public class Karet : MonoBehaviour
     [SerializeField]
     private Rigidbody rigidbody;
 
-    private string enemyTag;
+    public string enemyTag;
 
     private bool didHit;
 
@@ -25,11 +25,6 @@ public class Karet : MonoBehaviour
 
     public bool isFired;
 
-    public void SetEnemyTag(string enemyTag)
-    {
-        this.enemyTag = enemyTag;
-    }
-
     public void Fly(Vector3 force)
     {
         rigidbody.isKinematic = false;
@@ -38,26 +33,34 @@ public class Karet : MonoBehaviour
         transform.SetParent(null);
     }
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerStay(Collider collider)
     {
         if (didHit) return;
         didHit = true;
 
-        if (karetEnemy)
+        if(collider.CompareTag(enemyTag) || collider.CompareTag("Player"))
         {
-            collider.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
-        }
-        else
-        {
-            if (collider.CompareTag(enemyTag))
+            if (karetEnemy)
             {
-                //var health = collider.GetComponent<HealthControl>();
-                //health.ApplyDamage(damage);
                 collider.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
+            else
+            {
+                if (collider.CompareTag(enemyTag))
+                {
+                    //var health = collider.GetComponent<HealthControl>();
+                    //health.ApplyDamage(damage);
+                    collider.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+                    print("hitEnemy");
+                }
+            }
+
+            print(collider.gameObject.name);
         }
 
-        print(collider.gameObject.name);
+        
+
+        
         //rigidbody.velocity = Vector3.zero;
         //rigidbody.angularVelocity = Vector3.zero;
         //rigidbody.isKinematic = true;

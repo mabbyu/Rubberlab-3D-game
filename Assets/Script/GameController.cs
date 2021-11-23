@@ -48,11 +48,17 @@ public class GameController : MonoBehaviour
     //spawn guru
     public GameObject spawnGuru;
 
+
+    //bgm
+    //public GameObject bgmGame;
+
     public static GameController instance;
 
 
     //slider
     public Slider audioGame;
+
+    public Slider sensitivityGame;
 
     void Awake()
     {
@@ -88,7 +94,7 @@ public class GameController : MonoBehaviour
             WinGame();
         }*/
 
-        if (currScore >= (maxScore / 2))
+        if (currScore >= -1)
         {
             spawnGuru.SetActive(true);
         }
@@ -101,6 +107,7 @@ public class GameController : MonoBehaviour
         //timer
         if (GameActived)
         {
+            //bgmGame.SetActive(true);
             Time.timeScale = 1;
             waktu += Time.deltaTime;
             if (waktu >= 1)
@@ -118,7 +125,7 @@ public class GameController : MonoBehaviour
         else
         {
             Time.timeScale = 0;
-
+            //bgmGame.SetActive(false);
         }
 
         //score

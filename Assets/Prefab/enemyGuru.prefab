@@ -8498,9 +8498,9 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 0}
   spotter: {fileID: 1698281898}
-  minDis: 7
+  minDis: 20
   rotateSpeed: 1
-  wayPointDist: 5
+  wayPointDist: 15
   wp: []
   damage: 5
   moveSpeed: 3
@@ -8518,7 +8518,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
+  m_Radius: 0.55
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -27273,7 +27273,7 @@ GameObject:
   - component: {fileID: 6519229338126065830}
   - component: {fileID: 8942110269624219603}
   m_Layer: 12
-  m_Name: Sphere
+  m_Name: damager
   m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37248,7 +37248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8965658985951770572
 Transform:
   m_ObjectHideFlags: 0
@@ -37275,7 +37275,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.37
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50537,7 +50537,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.36
   m_Pitch: 1
   Loop: 0
   Mute: 0

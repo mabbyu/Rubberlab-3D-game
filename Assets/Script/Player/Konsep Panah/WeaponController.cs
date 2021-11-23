@@ -9,9 +9,6 @@ public class WeaponController : MonoBehaviour
     private Weapon weapon;
 
     [SerializeField]
-    private string enemyTag;
-
-    [SerializeField]
     private float maxFirePower;
 
     [SerializeField]
@@ -38,7 +35,6 @@ public class WeaponController : MonoBehaviour
 
     void Start()
     {
-        weapon.SetEnemyTag(enemyTag);
         weapon.Reload();
 
         firePower = 0;

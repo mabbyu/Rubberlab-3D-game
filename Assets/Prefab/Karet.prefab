@@ -127,6 +127,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &3933095640295137553
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933620353685346357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8803937527578110353, guid: 8a2d71a8686a92942972f78757518ea0, type: 3}
 --- !u!1 &7987125403715829405
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +208,7 @@ MonoBehaviour:
   damage: 20
   torque: 10
   rigidbody: {fileID: 7987125403715829407}
+  enemyTag: enemyBocah
   karetEnemy: 0
   canPick: 0
   isFired: 0
@@ -212,7 +227,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  skinWidth: 0.1
+  skinWidth: 0.3
 --- !u!135 &2762123250809738473
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -224,7 +239,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7987125404981852897
 GameObject:
@@ -236,7 +251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7987125404981852898}
   - component: {fileID: 7987125404981852909}
-  - component: {fileID: 6976157398385019011}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
@@ -267,19 +281,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7987125404981852897}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &6976157398385019011
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7987125404981852897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5239608603303765348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -353,6 +354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a2d71a8686a92942972f78757518ea0, type: 3}
+--- !u!1 &4933620353685346357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8a2d71a8686a92942972f78757518ea0, type: 3}
+  m_PrefabInstance: {fileID: 5239608603303765348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5709558544491938447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8a2d71a8686a92942972f78757518ea0, type: 3}

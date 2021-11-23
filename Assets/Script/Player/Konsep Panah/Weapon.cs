@@ -16,17 +16,10 @@ public class Weapon : MonoBehaviour
 
     private Karet currentKaret;
 
-    private string enemyTag;
-
     public bool isReloading;
 
     //karet
     public GameObject karetBullet;
-
-    public void SetEnemyTag(string enemyTag)
-    {
-        this.enemyTag = enemyTag;
-    }
 
     public void Reload()
     {
@@ -41,7 +34,6 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
         currentKaret = Instantiate(karetPrefab, spawnPoint);
         currentKaret.transform.localPosition = Vector3.zero;
-        currentKaret.SetEnemyTag(enemyTag);
         currentKaret.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         karetBullet.SetActive(true);
         isReloading = false;

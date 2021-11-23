@@ -451,15 +451,10 @@ MonoBehaviour:
   target: {fileID: 0}
   player: {fileID: 0}
   spotter: {fileID: 1698281898}
-  minDis: 10
+  minDis: 12
   attackDis: 5
   rotateSpeed: 1
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 4
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 0
-  wayPointDist: 5
+  wayPointDist: 9
   wp: []
   damage: 5
   moveSpeed: 4
@@ -996,7 +991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6465431816446476635
 Transform:
   m_ObjectHideFlags: 0
@@ -1023,7 +1018,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.32
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1150,7 +1145,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0

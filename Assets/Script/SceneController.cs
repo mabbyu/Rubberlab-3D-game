@@ -38,6 +38,11 @@ public class SceneController : MonoBehaviour
         creditPanel.SetActive(false);
     }
 
+    public void PilihCutScene()
+    {
+        SceneManager.LoadScene("CutScene");
+    }
+
     public void PilihLevel1()
     {
         SceneManager.LoadScene("1");
@@ -81,12 +86,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("2");
     }
-    /*
+    
     public void RestartLv3()
     {
         SceneManager.LoadScene("3");
     }
-    */
+ 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;

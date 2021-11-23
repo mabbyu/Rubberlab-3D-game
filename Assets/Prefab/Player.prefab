@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 3165065400218969746}
   - component: {fileID: 8738432983211026347}
   m_Layer: 8
-  m_Name: Main Camera
+  m_Name: Main Camera ama weapon
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,11 +849,11 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920275101906867817}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
@@ -871,6 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 920275101906867816}
   moveSpeed: 6
+  sprintSpeed: 0
   jumpHeight: 1
   gravity: -18
   groundCheck: {fileID: 920275100790476896}
@@ -898,8 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3165065400218969746}
-  enemyTag: enemyBocah
-  maxFirePower: 100
+  maxFirePower: 75
   firePowerSpeed: 100
   powerBar: {fileID: 0}
   karet: 25
@@ -937,7 +937,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.53
   m_Pitch: 1
   Loop: 0
   Mute: 0

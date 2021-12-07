@@ -8480,7 +8480,7 @@ MonoBehaviour:
   healthPanel: {fileID: 1329938476827425457}
   healthBar: {fileID: 1329938478337799881}
   meshRenderer: {fileID: 1329938477037337376}
-  getHit: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
+  getHit: {fileID: 8300000, guid: 3bee1730de0d59b409ecbb777f6174e8, type: 3}
   mainObject: {fileID: 6034267892367638918}
 --- !u!114 &6034267892367638918
 MonoBehaviour:
@@ -50535,7 +50535,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 032595c9db01b2c4baa080d4657cd0e4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3bee1730de0d59b409ecbb777f6174e8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.36
   m_Pitch: 1

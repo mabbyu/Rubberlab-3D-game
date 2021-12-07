@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3165065400218969746}
-  maxFirePower: 75
+  maxFirePower: 85
   firePowerSpeed: 100
   powerBar: {fileID: 0}
   karet: 25

@@ -30,13 +30,9 @@ public class enemyGuru : MonoBehaviour
     public bool seePlayer;
     private RaycastHit hit;
 
-
     bool isAttacking;
 
-
     public bool isDead;
-
-    
 
     public Animator animator;
 

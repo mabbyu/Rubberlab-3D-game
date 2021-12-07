@@ -98,11 +98,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Loading()
+    public void FinalCredit()
     {
-        SceneManager.LoadScene("Loading");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("FinalCredit");
     }
-
 
     public void QuitGame()
     {
